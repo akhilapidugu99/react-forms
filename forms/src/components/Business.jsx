@@ -13,19 +13,19 @@ class Business extends Component {
             <div>
                 <form className="personal-form" >
                     <label>Business Name
-                        <input type="text" name="busname"  value={this.props.busname} onChange={this.props.handleChange('busname')} />
+                        <input type="text" name="busname"  value={this.props.busname} onChange={this.props.handleChange("busname")} />
                     </label><br></br>
 
                     <label>Email
-                        <input type="text" name="busemail" value={this.props.busemail}  onChange={this.props.handleChange('busemail')} />
+                        <input type="text" name="busemail" value={this.props.busemail}  onChange={this.props.handleChange("busemail")} />
                     </label><br></br>
 
                     <label>Phone Number
-                        <input type="text" name="busnumber"  value={this.props.busnumber}  onChange={this.props.handleChange('busnumber')}/>
+                        <input type="text" name="busnumber"  value={this.props.busnumber}  onChange={this.props.handleChange("busnumber")}/>
                     </label><br></br>
 
                     <div>
-                <button ><Link to="./Display">Next</Link></button>
+                <button ><Link to="./BankDeatils">Next</Link></button>
             </div>
                 </form>
                 

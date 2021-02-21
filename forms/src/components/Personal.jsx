@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Personal extends Component {
     constructor(props) {
-        super(props)
-        // console.log(props)
+        super(props);
     }
     render() {
         
@@ -28,7 +27,7 @@ class Personal extends Component {
                         <input type="text" name="number" value={this.props.number} onChange={this.props.handleChange('number')} />
                     </label><br></br>
                     <div>
-                    <button ><Link to="./Display">Next</Link></button>
+                    <button ><Link to="./BankDetails">Next</Link></button>
                 </div>
                 </form>
                 

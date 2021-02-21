@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Address from '../components/Address.jsx'
 import currency from '../components/currency.json';
  class BankDetails extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            currencyvalue: ""
+            currencyData: [...currency]
         }
     }
     getCurrency() {
@@ -20,25 +19,26 @@ import currency from '../components/currency.json';
     render() {
         return (
             <div>
-                <form className="personal-form">
+                <form >
                     <label>Country
-                        <select name="country" onChange={this.props.setBankDetails} value={this.props.country}>
-                            <option value="United States Of America">United States Of America</option>
-                            <option value="India">India</option>
-                            <option value="china">China</option>
-                            <option value="Europe">Europe</option>
-                            <option value="United Arab Emirates">United Arab Emirates</option>
+                        <select name="country" onChange={this.props.handleChange("country")} value={this.props.country}>
+                        <option value={this.state.currencyData[0].name} >{this.state.currencyData[0].name}</option>
+                                <option value={this.state.currencyData[1].name} >{this.state.currencyData[1].name}</option>
+                                <option value={this.state.currencyData[2].name} >{this.state.currencyData[2].name}</option>
+                                <option value={this.state.currencyData[3].name} >{this.state.currencyData[3].name}</option>
+                                <option value={this.state.currencyData[4].name} >{this.state.currencyData[4].name}</option>
                         </select>
                     </label><br></br>
-                    <p>Curency:{this.state.currencyvalue}</p><br></br>
+                    <label>
+                    Currency: <input  type="text" name="currency'"  value={this.props.currency}  onChange={this.props.handleChange("currency")} /></label><br></br>
                     <label>IFSC code
-                        <input type="text" name="ifsc" onChange={this.props.setBankDetails} value={this.props.ifsccode} />
+                        <input type="text" name="ifsccode"  value={this.props.ifsccode} onChange={this.props.handleChange("ifsccode")} />
                     </label><br></br>
                     <label>ACH routing number
-                        <input type="text" name="ach" onChange={this.props.setBankDetails} value={this.props.ach} />
+                        <input type="text" name="ach" value={this.props.ach} onChange={this.props.handleChange("ach")}  />
                     </label><br></br>
                     <label>Account Number
-                        <input type="text" name="acntno" onChange={this.props.setBankDetails} value={this.props.acntNumber} />
+                        <input type="text" name="acntNumber" value={this.props.acntNumber} onChange={this.props.handleChange("acntNumber")}  />
                     </label><br></br>
 
                 </form>
